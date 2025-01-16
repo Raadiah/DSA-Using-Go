@@ -2,36 +2,37 @@ package stack
 
 import (
 	"bufio"
-	"fmt"
 	"os"
+
+	"github.com/fatih/color"
 )
 
+func writeActionValuesOnTerminal() {
+	color.Cyan("\nEnter command: Exit[x/X], Insert [i/I], Delete [d/D], Peek [p/P]")
+}
+
 func RunStack() {
-	fmt.Println("Initializing Stack..")
-	fmt.Println("Do you want to build using Linked List or Array?")
-	fmt.Println("Type 'L' for Linked List, 'A' for Array, 'X' to exit")
+	color.Cyan("\nType 'l/L' for Linked List, 'a/A' for Array, 'x/X' to exit")
 
 	reader := bufio.NewReader(os.Stdin)
 
-	for char, _, err := reader.ReadRune(); char != 'X'; char, _, err = reader.ReadRune() {
+forLoop:
+	for char, _, err := reader.ReadRune(); char != 'X' && char != 'x'; char, _, err = reader.ReadRune() {
 		if err != nil {
-			fmt.Println("An error occurred while getting input")
+			color.Red("An error occurred while getting input")
 		}
 
-		if char == 'A' {
-			fmt.Println("Preparing your Array Stack")
+		switch char {
+		case 'A', 'a':
 			arrayStack()
-			break
-		} else if char == 'L' {
-			fmt.Println("Preparing your Linked List Stack")
+			break forLoop
+		case 'L', 'l':
 			linkedListStack()
-			break
-		} else if char == '\n' {
-			continue
-		} else {
-			fmt.Println("Invalid Input")
+			break forLoop
+		case '\n':
+			continue forLoop
+		default:
+			color.Red("Invalid Command")
 		}
 	}
-
-	fmt.Println("Exiting Stack")
 }
