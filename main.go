@@ -6,12 +6,12 @@ import (
 	"os"
 
 	stack "algorithms.com/Stack"
-	"github.com/fatih/color"
+	"algorithms.com/theme"
 )
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-	color.Cyan("Enter 's/S' to run stack, 'x/X' to exit")
+	theme.WriteInstruction("Enter 's/S' to run stack, 'x/X' to exit")
 
 	for char, _, err := reader.ReadRune(); char != 'x' && char != 'X'; char, _, err = reader.ReadRune() {
 		if err != nil {
@@ -19,16 +19,16 @@ func main() {
 		}
 
 		if char == 's' || char == 'S' {
-			color.Green("Intitalizing Stack...")
+			theme.SuccessMessage("Intitalizing Stack...")
 			stack.RunStack()
 			break
 		} else if char == '\n' {
 			continue
 		} else {
-			color.Red("Invalid Command")
-			color.Yellow("Enter 's' to run stack, 'x' to exit")
+			theme.ErrorMessage("Invalid Command")
+			theme.WriteInstruction("Enter 's' to run stack, 'x' to exit")
 		}
 	}
 
-	color.Green("Exiting program...")
+	theme.SuccessMessage("Exiting program...")
 }

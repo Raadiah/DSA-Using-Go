@@ -5,18 +5,18 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/fatih/color"
+	"algorithms.com/theme"
 )
 
 func checkTop(top int) bool {
 	if top < 0 {
-		color.Red("The stack is empty.")
+		theme.ErrorMessage("The stack is empty.")
 	}
 	return top >= 0
 }
 
 func arrayStack() {
-	color.Green("Created Linked List Stack. Enter commands to operate on the stack.")
+	theme.SuccessMessage("Created Linked List Stack. Enter commands to operate on the stack.")
 	reader := bufio.NewReader(os.Stdin)
 	top := -1
 	var stack []int
@@ -35,30 +35,30 @@ forLoop:
 		case 'I', 'i':
 			top++
 			var num int
-			color.Cyan("Enter numeric value to append to stack: ")
+			theme.WriteInstruction("Enter numeric value to append to stack: ")
 			_, e := fmt.Scanf("%d", &num)
 			if e != nil {
 				print(e)
 			}
 			stack = append(stack, num)
-			color.Green("Appended successfully")
+			theme.SuccessMessage("Appended successfully")
 		case 'P', 'p':
 			if checkTop(top) {
-				color.Green("Top value: %d", stack[top])
+				//theme.SuccessMessage("Top value: %d", stack[top])
 			}
 		case 'D', 'd':
 			if checkTop(top) {
 				top--
 				stack = stack[:len(stack)-1]
-				color.Green("Deleted from stack")
+				theme.SuccessMessage("Deleted from stack")
 			}
 		case 'H', 'h':
 			writeActionValuesOnTerminal()
 		default:
-			color.Red("Invalid Command.")
+			theme.ErrorMessage("Invalid Command.")
 		}
 
 		writeActionValuesOnTerminal()
 	}
-	color.Green("Exiting array stack")
+	theme.SuccessMessage("Exiting array stack")
 }
