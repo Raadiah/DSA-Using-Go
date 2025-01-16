@@ -22,12 +22,11 @@ func main() {
 			theme.SuccessMessage("Intitalizing Stack...")
 			stack.RunStack()
 			break
-		} else if char == '\n' {
-			continue
 		} else {
 			theme.ErrorMessage("Invalid Command")
 			theme.WriteInstruction("Enter 's' to run stack, 'x' to exit")
 		}
+		reader.Discard(reader.Buffered())
 	}
 
 	theme.SuccessMessage("Exiting program...")

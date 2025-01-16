@@ -29,10 +29,10 @@ forLoop:
 		case 'L', 'l':
 			linkedListStack()
 			break forLoop
-		case '\n':
-			continue forLoop
 		default:
 			theme.ErrorMessage("Invalid Command")
 		}
+
+		reader.Discard(reader.Buffered())
 	}
 }

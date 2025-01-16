@@ -23,15 +23,12 @@ func arrayStack() {
 
 	writeActionValuesOnTerminal()
 
-forLoop:
 	for char, _, err := reader.ReadRune(); char != 'X' && char != 'x'; char, _, err = reader.ReadRune() {
 		if err != nil {
 			fmt.Println(err)
 		}
 
 		switch char {
-		case '\n':
-			continue forLoop
 		case 'I', 'i':
 			top++
 			var num int
@@ -57,6 +54,8 @@ forLoop:
 		default:
 			theme.ErrorMessage("Invalid Command.")
 		}
+
+		reader.Discard(reader.Buffered())
 
 		writeActionValuesOnTerminal()
 	}
