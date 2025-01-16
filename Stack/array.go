@@ -44,7 +44,7 @@ forLoop:
 			theme.SuccessMessage("Appended successfully")
 		case 'P', 'p':
 			if checkTop(top) {
-				//theme.SuccessMessage("Top value: %d", stack[top])
+				theme.SuccessMessage("Top value: %d", stack[top])
 			}
 		case 'D', 'd':
 			if checkTop(top) {
