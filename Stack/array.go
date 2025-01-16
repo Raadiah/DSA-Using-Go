@@ -2,6 +2,6 @@ package stack
 
 import "fmt"
 
-func ArrayStack() {
+func arrayStack() {
 	fmt.Println("Let's Check Array Stack")
 }

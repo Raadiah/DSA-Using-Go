@@ -26,8 +26,7 @@ func main() {
 		}
 
 		if char == 'y' {
-			stack.LinkedListStack()
-			stack.ArrayStack()
+			stack.RunStack()
 			fmt.Println("Do you want to run stack again? Type 'y' or 'n'")
 		} else if char == '\n' {
 			continue

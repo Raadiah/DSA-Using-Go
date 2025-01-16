@@ -2,6 +2,6 @@ package stack
 
 import "fmt"
 
-func LinkedListStack() {
+func linkedListStack() {
 	fmt.Println("Let's Check Pointer Stack")
 }
