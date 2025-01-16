@@ -5,35 +5,30 @@ import (
 	"fmt"
 	"os"
 
-	"algorithms.com/stack"
+	stack "algorithms.com/Stack"
+	"github.com/fatih/color"
 )
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Enter 's' to start Program")
+	color.Cyan("Enter 's/S' to run stack, 'x/X' to exit")
 
-	for char, err := reader.ReadByte(); char != 's'; char, err = reader.ReadByte() {
-		if err != nil {
-			fmt.Println(err)
-		}
-	}
-
-	fmt.Println("Do you want to run stack? Type 'y' or 'n'")
-
-	for char, _, err := reader.ReadRune(); char != 'n'; char, _, err = reader.ReadRune() {
+	for char, _, err := reader.ReadRune(); char != 'x' && char != 'X'; char, _, err = reader.ReadRune() {
 		if err != nil {
 			fmt.Println(err)
 		}
 
-		if char == 'y' {
+		if char == 's' || char == 'S' {
+			color.Green("Intitalizing Stack...")
 			stack.RunStack()
-			fmt.Println("Do you want to run stack again? Type 'y' or 'n'")
+			break
 		} else if char == '\n' {
 			continue
 		} else {
-			fmt.Println("Invalid Input")
+			color.Red("Invalid Command")
+			color.Yellow("Enter 's' to run stack, 'x' to exit")
 		}
 	}
 
-	fmt.Println("Exiting program...")
+	color.Green("Exiting program...")
 }
