@@ -7,6 +7,13 @@ import (
 	"algorithms.com/theme"
 )
 
+type stackMethods interface {
+	Top() any
+	Delete() bool
+	Insert(item any)
+	checkTop() bool
+}
+
 func writeActionValuesOnTerminal() {
 	theme.WriteInstruction("\nEnter command: Exit[x/X], Insert [i/I], Delete [d/D], Peek [p/P]")
 }
@@ -24,7 +31,7 @@ forLoop:
 
 		switch char {
 		case 'A', 'a':
-			arrayStack()
+			runArrayStack()
 			break forLoop
 		case 'L', 'l':
 			linkedListStack()
