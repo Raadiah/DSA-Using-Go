@@ -20,7 +20,7 @@ func main() {
 
 		if char == 's' || char == 'S' {
 			theme.SuccessMessage("Intitalizing Stack...")
-			stack.RunStack()
+			stack.ChooseStack()
 			break
 		} else {
 			theme.ErrorMessage("Invalid Command")
