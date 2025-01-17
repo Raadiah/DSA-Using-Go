@@ -8,3 +8,9 @@ A stack can be implemented in two ways:
 
 - Using Array
 - Using Linked List
+
+In both cases the stacks will have the following functionalities:
+
+- Top -> Get the value of the last inserted input
+- Insert -> Push item on top
+- Delete -> Delete item from top
