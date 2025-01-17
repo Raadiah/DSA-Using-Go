@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	stack "algorithms.com/Stack"
+	"algorithms.com/stack"
 	"algorithms.com/theme"
 )
 
