@@ -31,18 +31,19 @@ func runStack(stack stackMethods) {
 
 		switch char {
 		case 'I', 'i':
-			var num int
+			var item string
 			theme.WriteInstruction("Enter numeric value to append to stack: ")
-			_, e := fmt.Scanf("%d", &num)
+			_, e := fmt.Scanf("%s", &item)
 			if e != nil {
-				print(e)
+				fmt.Println("Error ", e)
+			} else {
+				stack.Insert(item)
+				theme.SuccessMessage("Appended successfully")
 			}
-			stack.Insert(num)
-			theme.SuccessMessage("Appended successfully")
 		case 'P', 'p':
 			if stack.checkTop() {
-				theme.SuccessMessage("Current top: ")
-				fmt.Println(stack.Top())
+				top := stack.Top()
+				theme.SuccessMessage("Current top: %v", top)
 			}
 		case 'D', 'd':
 			if stack.checkTop() {
