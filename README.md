@@ -6,4 +6,4 @@ This will be a command line tool programming. Let's dive into it
 
 ### Data Structures
 
-- [Stack](/Stack/stack.md)
+- [Stack](/stack/stack.md)
