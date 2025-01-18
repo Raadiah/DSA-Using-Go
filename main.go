@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"algorithms.com/stack"
-	"algorithms.com/theme"
+	"github.com/Raadiah/DSA-Using-Go/stack"
+	"github.com/Raadiah/DSA-Using-Go/theme"
 )
 
 func main() {

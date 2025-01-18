@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"algorithms.com/theme"
+	"github.com/Raadiah/DSA-Using-Go/theme"
 )
 
 type stackMethods interface {

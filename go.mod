@@ -1,4 +1,4 @@
-module algorithms.com
+module github.com/Raadiah/DSA-Using-Go
 
 go 1.23.4
 

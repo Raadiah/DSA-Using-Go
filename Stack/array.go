@@ -1,7 +1,7 @@
 package stack
 
 import (
-	"algorithms.com/theme"
+	"github.com/Raadiah/DSA-Using-Go/theme"
 )
 
 type arrayStack struct {
