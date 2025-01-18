@@ -40,3 +40,9 @@ func createLinkedListStack() *linkedListStack {
 	stack := linkedListStack{nil}
 	return &stack
 }
+
+func GetLinkedListStack () stacker {
+	arrayStack := createLinkedListStack()
+	var stack stacker = arrayStack
+	return stack
+}

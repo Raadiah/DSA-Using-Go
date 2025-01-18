@@ -38,3 +38,9 @@ func createArrayStack() *arrayStack {
 	stack := arrayStack{-1, nil}
 	return &stack
 }
+
+func GetArrayStack () stacker {
+	arrayStack := createArrayStack()
+	var stack stacker = arrayStack
+	return stack
+}

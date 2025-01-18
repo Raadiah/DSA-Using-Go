@@ -8,7 +8,7 @@ import (
 	"github.com/Raadiah/DSA-Using-Go/theme"
 )
 
-type stackMethods interface {
+type stacker interface {
 	Top() any
 	Delete() bool
 	Insert(item any)
@@ -19,7 +19,7 @@ func writeActionValuesOnTerminal() {
 	theme.WriteInstruction("\nEnter command: Exit[x/X], Insert [i/I], Delete [d/D], Peek [p/P]")
 }
 
-func runStack(stack stackMethods) {
+func runStack(stack stacker) {
 	reader := bufio.NewReader(os.Stdin)
 
 	writeActionValuesOnTerminal()
