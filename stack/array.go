@@ -10,6 +10,9 @@ type arrayStack struct {
 }
 
 func (stack *arrayStack) Top() any {
+	if stack.top < 0 {
+		return nil
+	}
 	return stack.array[stack.top]
 }
 
@@ -39,7 +42,7 @@ func createArrayStack() *arrayStack {
 	return &stack
 }
 
-func GetArrayStack () stacker {
+func GetArrayStack() stacker {
 	arrayStack := createArrayStack()
 	var stack stacker = arrayStack
 	return stack

@@ -21,11 +21,15 @@ func (stack *linkedListStack) Insert(item any) {
 func (stack *linkedListStack) Delete() bool {
 	if stack.top != nil {
 		stack.top = stack.top.prevNode
+		return true
 	}
-	return stack.top != nil
+	return false
 }
 
 func (stack *linkedListStack) Top() any {
+	if stack.top == nil {
+		return nil
+	}
 	return stack.top.data
 }
 
@@ -41,7 +45,7 @@ func createLinkedListStack() *linkedListStack {
 	return &stack
 }
 
-func GetLinkedListStack () stacker {
+func GetLinkedListStack() stacker {
 	arrayStack := createLinkedListStack()
 	var stack stacker = arrayStack
 	return stack
