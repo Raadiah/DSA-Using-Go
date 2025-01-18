@@ -1,4 +1,4 @@
-module github.com/Raadiah/DSA-Using-Go
+module github.com/Raadiah/DSA-Using-Go 
 
 go 1.23.4
 
@@ -7,6 +7,7 @@ retract (
     v0.2.0 // Test Publish.
     v0.3.0 // Test Publish.
     v0.4.0 // Test Publish.
+    v0.5.0 // Test Publish.
     v0.6.0 // Test Publish. All the previous versions were added to test how this works.
 )
 
